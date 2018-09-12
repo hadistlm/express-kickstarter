@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+		include ./inside/head.jade
+		body.hold-transition.skin-blue.sidebar-mini
+		div.wrapper
+			include ./inside/navbar.jade
+			include ./inside/sidebar.jade
+			
+			div.content-wrapper
+				block content
+			
+			include ./inside/footer.jade
+			
+			
+	include ./inside/script.jade
