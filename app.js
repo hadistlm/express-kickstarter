@@ -1,12 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
+var createError  = require('http-errors');
+var express 	 = require('express');
+var path 		 = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testingRouter = require('./routes/testing');
+var logger 		 = require('morgan');
+var consign 	 = require('consign');
 
 var app = express();
 
@@ -20,9 +17,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/testing', testingRouter);
+// autoload the app folder
+consign({cwd: 'app'})
+  .include('models')
+  .then('controllers')
+  .then('routes')
+  .into(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
