@@ -1,3 +1,9 @@
+/**
+ * This is Testing Controller Handler
+ */
+
+'use strict';
+
 module.exports = function(app) {
 
   this.index = function(req, res, next) {

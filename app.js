@@ -1,9 +1,19 @@
+/**
+ *
+ * Main File to handle all the required function
+ *
+ * *  Becareful when editing this file
+ * ** Beware Only change necessary line
+ */
+
+'use strict';
+
 var createError  = require('http-errors');
-var express 	 = require('express');
-var path 		 = require('path');
+var express 	   = require('express');
+var path 		     = require('path');
 var cookieParser = require('cookie-parser');
-var logger 		 = require('morgan');
-var consign 	 = require('consign');
+var logger 		   = require('morgan');
+var consign 	   = require('consign');
 
 var app = express();
 
