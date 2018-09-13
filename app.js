@@ -8,6 +8,9 @@
 
 'use strict';
 
+// determine base directories
+global.__basedir = __dirname;
+
 var createError  = require('http-errors');
 var express 	   = require('express');
 var path 		     = require('path');
@@ -29,8 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // autoload the app folder
 consign({cwd: 'app'})
-  .include('models')
-  .then('controllers')
+  .include('controllers')
   .then('routes')
   .into(app);
 

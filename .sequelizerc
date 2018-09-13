@@ -4,6 +4,6 @@ const sequelizePath = 'app/database'
 module.exports = {
     'config': path.join(__dirname, '/config/config.js'),
     'migrations-path': path.resolve(sequelizePath, 'migrations'),
-    'models-path': path.resolve(sequelizePath, 'models'),
+    'models-path': path.resolve(__dirname, 'app/models'),
     'seeders-path': path.resolve(sequelizePath, 'seeders')
 };
