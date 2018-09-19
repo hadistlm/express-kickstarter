@@ -6,6 +6,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false,
+    "migrationStorage": "sequelize",
     "migrationStorageTableName": "db_migration",
     "seederStorageTableName": "db_seeders"
   },
@@ -16,6 +17,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false,
+    "migrationStorage": "sequelize",
     "migrationStorageTableName": "db_migration",
     "seederStorageTableName": "db_seeders"
   },
@@ -26,6 +28,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false,
+    "migrationStorage": "sequelize",
     "migrationStorageTableName": "db_migration",
     "seederStorageTableName": "db_seeders"
   }
