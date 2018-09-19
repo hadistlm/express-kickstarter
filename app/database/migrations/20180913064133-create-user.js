@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {
@@ -21,6 +22,18 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      }
+    },{
+      hooks: {
+        beforeCreate: function (User, options, fn) {
+          User.createdAt = new Date();
+          User.updatedAt = new Date();
+          fn(null, User);
+        },
+        beforeUpdate: function (User, options, fn) {
+          User.updatedAt = new Date();
+          fn(null, User);
+        }
       }
     });
   },
