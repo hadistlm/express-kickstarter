@@ -5,12 +5,11 @@
 'use strict';
 
 module.exports = function(app) {
-
+  
   var models = app.settings.models;
 
   this.index = function(req, res, next) {
     models.User.findAll().then(function(users) {
-      console.log(users);
       res.render('contents/usersviews', {
         title: 'Sequelize: Express Example',
         users: users

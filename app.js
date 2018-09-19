@@ -21,7 +21,7 @@ var models       = require(__dirname + '/app/models');
 
 let app = express();
 
-// view engine setup
+// engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('models', models);
