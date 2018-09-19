@@ -1,0 +1,21 @@
+extends ../base
+
+block content
+	section.content-header
+		h1= message
+		small it all starts here
+
+		ol.breadcrumb
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard Home
+			li 
+				a(href='#') Examples
+			li.active Blank page
+
+	section.content
+		div.box
+			div.box-body
+				each user in users
+					p User Name : #{user.username}
+					p User Pass : #{user.password}
