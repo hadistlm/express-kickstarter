@@ -5,7 +5,9 @@
     "database": "db_test_express",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "migrationStorageTableName": "db_migration",
+    "seederStorageTableName": "db_seeders"
   },
   "test": {
     "username": "root",
@@ -13,7 +15,9 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "migrationStorageTableName": "db_migration",
+    "seederStorageTableName": "db_seeders"
   },
   "production": {
     "username": "root",
@@ -21,6 +25,8 @@
     "database": "db_test_express",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "migrationStorageTableName": "db_migration",
+    "seederStorageTableName": "db_seeders"
   }
 }
