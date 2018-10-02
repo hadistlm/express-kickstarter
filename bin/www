@@ -4,10 +4,12 @@
  * Module dependencies.
  */
 
-var app     = require('../app');
-var debug   = require('debug')('latihanexpress:server');
-var http    = require('http');
-var models  = require(__basedir + '/app/models');
+const CONSTANT = require('../config/constant');
+
+var app     = require(CONSTANT.PATH.App_Path);
+var debug   = MODULES.debug('latihanexpress:server');
+var http    = MODULES.http;
+var models  = require(CONSTANT.PATH.Model_Path);
 
 /**
  * Get port from environment and store in Express.
