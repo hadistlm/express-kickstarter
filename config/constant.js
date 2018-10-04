@@ -19,8 +19,8 @@ module.exports = {
 		Public_Path: path.join(__basedir, 'public'),
 		Views_Path : path.join(__basedir, 'views')
 	},
-	// DEFINE CUSTOM GLOBAL VARIABLE
+	// DEFINE CUSTOM VARIABLE
 	VARIABLE : {
-		// CUSTOM VARIABLE
+		testing : 'HAHAHAHHAHA'
 	}
 };

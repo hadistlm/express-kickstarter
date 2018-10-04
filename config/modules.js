@@ -8,11 +8,14 @@
 
 module.exports = {
 	// DEFINE ALL REQUIRED MODULES
+	createError: require('http-errors'),
 	express: require('express'),
 	debug: require('debug'),
-	fs: require('fs'),
+	filesystem: require('fs'),
 	path: require('path'),
 	http: require('http'),
 	sequelize: require('sequelize'),
-	consign: require('consign')
+	consign: require('consign'),
+	cookieParser: require('cookie-parser'),
+	logger: require('morgan')
 };
