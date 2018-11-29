@@ -21,7 +21,7 @@
   let cookieParser = MODULES.cookieParser;
   let logger 		   = MODULES.logger;
   let consign 	   = MODULES.consign;
-  let models       = CONSTANT.PATH.Model_Path;
+  let models       = require(CONSTANT.PATH.Model_Path);
 
 /**
  * ==================================================
