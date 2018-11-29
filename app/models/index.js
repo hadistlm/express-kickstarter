@@ -57,6 +57,7 @@
     if (db[modelName].associate) {
       db[modelName].associate(db);
     }
+    console.log('Initialize Model: '+modelName);
   });
 
 /**
@@ -67,5 +68,7 @@
 
   db.sequelize = sequelize;
   db.Sequelize = Sequelize;
+
+  console.log('All models are loaded...');
 
 module.exports = db;
