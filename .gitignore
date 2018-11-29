@@ -1,2 +1,3 @@
 node_modules/
 public/bower_package/
+package-lock.json
