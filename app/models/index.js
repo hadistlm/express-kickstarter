@@ -15,9 +15,12 @@
  * ==================================================
  */
 
+  // load main modules
   let fs        = MODULES.filesystem;
   let path      = MODULES.path;
-  let Sequelize = MODULES.sequelize;
+  let { Sequelize, DataTypes } = MODULES.sequelize;
+
+  // load path & required files
   let basename  = path.basename(__filename);
   let env       = process.env.NODE_ENV || 'development';
   let config    = require(__basedir + '/config/config.json')[env];
@@ -31,10 +34,19 @@
 
   let sequelize;
 
+  // get database information based on ENV data
   if (config.use_env_variable) {
     sequelize = new Sequelize(process.env[config.use_env_variable], config);
   } else {
     sequelize = new Sequelize(config.database, config.username, config.password, config);
+  }
+
+  // rechecking database connection
+  try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
   }
 
 /**
@@ -49,7 +61,7 @@
       return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
     })
     .forEach(file => {
-      const model = sequelize['import'](path.join(__dirname, file));
+      const model = require(path.join(__dirname, file))(sequelize, DataTypes)
       db[model.name] = model;
     });
 
@@ -69,6 +81,19 @@
   db.sequelize = sequelize;
   db.Sequelize = Sequelize;
 
-  console.log('All models are loaded...');
+  const sequelizeOptions = { logging: console.log, force: false};
+
+  // Removes all tables and recreates them (only available if env is not in production)
+  if (CONSTANT.VARIABLE.DB_FORCE_RESTART === true && process.env.ENV !== 'production') {
+    sequelizeOptions.force = true;
+  }
+
+  sequelize.sync(sequelizeOptions)
+    .catch((err) => {
+      console.log(err);
+      process.exit();
+    });
+
+  console.log("All Tables loaded successfully")
 
 module.exports = db;

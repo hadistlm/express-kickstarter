@@ -17,5 +17,6 @@ module.exports = {
 	sequelize: require('sequelize'),
 	consign: require('consign'),
 	cookieParser: require('cookie-parser'),
-	logger: require('morgan')
+	logger: require('morgan'),
+	bcrypt: require('bcrypt'),
 };

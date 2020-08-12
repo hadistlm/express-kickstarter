@@ -21,6 +21,6 @@ module.exports = {
 	},
 	// DEFINE CUSTOM VARIABLE
 	VARIABLE : {
-		testing : 'HAHAHAHHAHA'
+		DB_FORCE_RESTART : false
 	}
 };
