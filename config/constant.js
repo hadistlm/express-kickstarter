@@ -14,10 +14,10 @@ const path 	  	 = MODULES.path;
 module.exports = {
 	// DEFINE ALL REQUIRED PATH
 	PATH : {
-		App_Path   : path.join(__basedir, '/app'),
+		App_Path   : path.join(__basedir, 'app'),
 		Model_Path : path.join(__basedir, 'app/models'),
 		Public_Path: path.join(__basedir, 'public'),
-		Views_Path : path.join(__basedir, 'views')
+		Views_Path : path.join(__basedir, 'app/views')
 	},
 	// DEFINE CUSTOM VARIABLE
 	VARIABLE : {
