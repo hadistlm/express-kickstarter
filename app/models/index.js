@@ -81,7 +81,9 @@
   db.sequelize = sequelize;
   db.Sequelize = Sequelize;
 
-  const sequelizeOptions = { logging: console.log, force: false};
+  // logging : false | console.log
+  // Ref : https://sequelize.org/master/manual/getting-started.html#logging
+  const sequelizeOptions = { logging: false, force: false};
 
   // Removes all tables and recreates them (only available if env is not in production)
   if (CONSTANT.VARIABLE.DB_FORCE_RESTART === true && process.env.ENV !== 'production') {
