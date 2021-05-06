@@ -19,10 +19,10 @@ module.exports = function(app) {
     return res;
   };
 
-  // this.getAll = function(req, res, next) {
-  //   var users = User.find();
-  //   return res.json(users);
-  // };
+  this.getAll = async function(req, res, next) {
+    var users = await models.User.findAll();
+    return res.json(users);
+  };
 
   // this.getByName = function(req, res, next) {
   //   var user = User.findByName(req.params.name);

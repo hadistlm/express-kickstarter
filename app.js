@@ -21,6 +21,7 @@
   let cookieParser = MODULES.cookieParser;
   let logger 		   = MODULES.logger;
   let consign 	   = MODULES.consign;
+  let cors         = MODULES.cors;
   let models       = require(CONSTANT.PATH.Model_Path);
 
 /**
@@ -35,6 +36,7 @@
   app.set('view engine', 'jade');
 
   app.use(logger('dev'));
+  app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
