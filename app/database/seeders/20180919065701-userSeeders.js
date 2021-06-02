@@ -10,7 +10,7 @@ module.exports = {
     **/
     const users = [...Array(10)].map((user) => (
       {
-        username: faker.internet.userName(),
+        username: faker.internet.userName(), //faker.unique(faker.internet.userName, [3], { maxRetries: 3 })
         password: bcrypt.hashSync('rahasia789', bcrypt.genSaltSync(12)),
         createdAt: new Date(),
         updatedAt: new Date(),
