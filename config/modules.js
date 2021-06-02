@@ -19,5 +19,6 @@ module.exports = {
 	cookieParser: require('cookie-parser'),
 	logger: require('morgan'),
 	bcrypt: require('bcrypt'),
-	cors: require('cors')
+	cors: require('cors'),
+	faker: require('faker')
 };

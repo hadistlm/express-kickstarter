@@ -1,6 +1,6 @@
 'use strict';
 
-const bcrypt = require("bcrypt");
+const { bcrypt, faker } = MODULES;
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -8,13 +8,16 @@ module.exports = {
      * Add altering commands here.
      * Return a promise to correctly handle asynchronicity.
     **/
-    return queryInterface.bulkInsert('Users', [{
-        email: 'john@mail.com',
-        username: 'JohnDoe',
+    const users = [...Array(10)].map((user) => (
+      {
+        username: faker.internet.userName(),
         password: bcrypt.hashSync('rahasia789', bcrypt.genSaltSync(12)),
         createdAt: new Date(),
         updatedAt: new Date(),
-      }], {});
+      }
+    ));
+
+    return queryInterface.bulkInsert('Users', users, {});
   },
 
   down: (queryInterface, Sequelize) => {
