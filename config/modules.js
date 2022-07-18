@@ -20,5 +20,7 @@ module.exports = {
 	logger: require('morgan'),
 	bcrypt: require('bcrypt'),
 	cors: require('cors'),
-	faker: require('faker')
+	faker: require('@faker-js/faker').faker,
+	lodash: require('lodash')._,
+	moment: require('moment')
 };
